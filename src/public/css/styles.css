@@ -1,0 +1,550 @@
+/* Agregar al inicio del archivo, antes de los demás estilos */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #1a237e 100%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.site-header {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.header-subtitle {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.player-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.player-container:hover,
+.player-container:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    border-color: rgba(0, 123, 255, 0.3);
+}
+
+.player-container:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.player-controls {
+    margin: 20px 0;
+}
+
+.player-controls.main-controls {
+    margin: 20px 0;
+}
+
+.player-controls.stop-control {
+    margin: 10px 0 25px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#playAllBtn {
+    background-color: #007bff;
+}
+
+#playAllBtn:hover {
+    background-color: #0056b3;
+}
+
+#stopBtn {
+    background-color: #dc3545;
+    min-width: 150px;
+}
+
+#stopBtn:hover {
+    background-color: #c82333;
+}
+
+#playAllBtn.active {
+    background-color: #0056b3;
+    animation: pulse 2s infinite;
+}
+
+#playAllBtn.active:hover {
+    background-color: #c82333;
+}
+
+.song-info {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #ddd;
+    margin: 10px 0;
+    border-radius: 2px;
+}
+
+#progress {
+    width: 0%;
+    height: 100%;
+    background: #007bff;
+    border-radius: 2px;
+    transition: width 0.1s linear;
+}
+
+#currentSong {
+    font-weight: bold;
+    color: #333;
+}
+
+.debug-info {
+    color: #666;
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+
+.playlist-container {
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.playlist-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.playlist-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* Remover estilos antiguos que ya no necesitamos */
+.playlist-item.active {
+    background-color: #e9ecef;
+    color: #333;
+}
+
+/* Agregar animación para el botón activo */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.98); }
+    100% { transform: scale(1); }
+}
+
+.custom-playlist-container {
+    margin-top: 30px;
+    border-top: 2px solid #eee;
+    padding-top: 20px;
+}
+
+.custom-playlist-controls {
+    margin-top: 10px;
+}
+
+.playlist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-to-playlist-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.remove-from-playlist-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#playCustomBtn {
+    background-color: #6f42c1;
+}
+
+#clearCustomBtn {
+    background-color: #dc3545;
+}
+
+.brand-banner {
+    background: linear-gradient(45deg, #1a237e, #0d47a1);
+    padding: 30px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.brand-title {
+    font-size: 3.5em;
+    font-weight: 800;
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.brand-description {
+    color: white;
+    max-width: 800px;
+    margin: 25px auto 0;
+    padding: 0 20px;
+}
+
+.brand-description p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    opacity: 0.9;
+}
+
+.brand-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.decoration-line {
+    height: 2px;
+    width: 100px;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    margin: 0 15px;
+}
+
+.decoration-symbol {
+    font-size: 1.5em;
+    color: #ffd700;
+    animation: pulse 2s infinite;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 
+            2px 2px 0 #000,
+            -2px -2px 0 #000,
+            2px -2px 0 #000,
+            -2px 2px 0 #000,
+            0 0 10px #007bff,
+            0 0 20px #007bff;
+    }
+    to {
+        text-shadow: 
+            2px 2px 0 #000,
+            -2px -2px 0 #000,
+            2px -2px 0 #000,
+            -2px 2px 0 #000,
+            0 0 20px #007bff,
+            0 0 30px #007bff;
+    }
+}
+
+.brand-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.brand-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+.site-footer {
+    background: linear-gradient(45deg, #1a237e, #0d47a1);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-footer a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255,255,255,0.5);
+    transition: all 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: #ffd700;
+    border-bottom-color: #ffd700;
+}
+
+.copyright {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.personal-links {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.links-title {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.links-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #0056b3, #004094);
+}
+
+.link-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.link-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Estilos específicos para móviles */
+@media (max-width: 768px) {
+    .player-container {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    .brand-title {
+        font-size: 2.5em;
+    }
+
+    .player-controls.main-controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    button {
+        min-width: 45%;
+        margin: 0;
+    }
+
+    #stopBtn {
+        min-width: 80%;
+    }
+
+    .links-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .social-link {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/* Mejoras táctiles para dispositivos móviles */
+@media (hover: none) {
+    .playlist-item {
+        padding: 15px 10px;
+    }
+
+    button {
+        padding: 15px 20px;
+    }
+
+    .add-to-playlist-btn,
+    .remove-from-playlist-btn {
+        padding: 8px 12px;
+    }
+}
+
+.available-songs-container {
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.songs-grid {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.songs-list {
+    display: grid;
+    gap: 10px;
+}
+
+.song-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.song-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+/* Añadir un indicador sutil para la canción activa */
+.song-item.active::before,
+.playlist-item.active::before {
+    content: '▶';
+    margin-right: 8px;
+    color: #007bff;
+    font-size: 0.8em;
+}
+
+.song-title {
+    flex-grow: 1;
+    text-align: left;
+    margin-right: 15px;
+    font-size: 0.95em;
+    color: #333;
+}
+
+.add-to-custom-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: all 0.2s ease;
+}
+
+.add-to-custom-btn:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+/* Estilos para elementos activos */
+.song-item:hover,
+.song-item.active,
+.playlist-item:hover,
+.playlist-item.active {
+    background-color: #e9ecef;
+    transform: translateX(5px);
+}

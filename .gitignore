@@ -1,4 +1,4 @@
 node_modules/
 .env
 .DS_Store
-src/public/audio/*.mp3
+docs/public/audio/*.mp3

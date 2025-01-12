@@ -2,9 +2,9 @@
   "name": "audio-playlist-app",
   "version": "1.0.0",
   "description": "Web application for playing audio playlists",
-  "main": "src/index.js",
+  "main": "docs/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node docs/index.js",
     "test": "jest"
   },
   "dependencies": {

@@ -49,34 +49,20 @@ This project is licensed under the MIT License.
 ## Estructura del Proyecto
 ```
 audio-playlist-app/
-├── src/
+├── docs/               # Carpeta principal
 │   ├── controllers/
-│   │   └── audioController.js
 │   ├── models/
-│   │   └── playlist.js
 │   ├── routes/
-│   │   └── index.js
-│   ├── services/
-│   │   └── audioService.js
 │   ├── public/
 │   │   ├── css/
-│   │   │   └── styles.css
 │   │   ├── js/
-│   │   │   └── player.js
 │   │   └── audio/
-│   │       └── (archivos mp3)
 │   └── views/
-│       └── index.html
-├── tests/
-│   └── audio.test.js
 ├── package.json
 ├── .env
-├── .gitignore
-└── README.md
+└── .gitignore
 ```
 
-## Configuración
-1. Instalar dependencias: `npm install`
-2. Colocar archivos MP3 en: `src/public/audio/`
-3. Iniciar servidor: `npm start`
-4. Acceder a: `http://localhost:3000`
+## Acceso Web
+- Desarrollo local: http://localhost:3000
+- Producción: https://maat444.github.io/audio-playlist-app/
